@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::group(['prefix'=>'admin' , 'namespace'=>'Admin'],function(){
+
+    Route::any('/','IndexController@index');
+    Route::any('index','IndexController@index');
+    Route::any('login','LoginController@login');
+
+});
