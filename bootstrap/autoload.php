@@ -32,3 +32,11 @@ $compiledPath = __DIR__.'/cache/compiled.php';
 if (file_exists($compiledPath)) {
     require $compiledPath;
 }
+
+// 引入自定义函数库
+$myFunPath =  __DIR__.'/functions.php';
+if (file_exists($myFunPath)) {
+    require_once $myFunPath;
+}
+
+

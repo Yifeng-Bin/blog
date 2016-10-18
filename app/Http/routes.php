@@ -16,10 +16,21 @@ Route::get('/', function () {
 });
 
 
+// 后台
 Route::group(['prefix'=>'admin' , 'namespace'=>'Admin'],function(){
+
+    Route::get('login','LoginController@login');
+    Route::post('ajax_login','LoginController@ajax_login');
+    Route::get('code','LoginController@code');
+
+});
+
+Route::group(['middleware'=>['admin.login'],'prefix'=>'admin' , 'namespace'=>'Admin'],function(){
 
     Route::any('/','IndexController@index');
     Route::any('index','IndexController@index');
-    Route::any('login','LoginController@login');
+    Route::any('quit','LoginController@quit');
 
 });
+
+// 前台
