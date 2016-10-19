@@ -33,6 +33,8 @@ Route::group(['middleware'=>['admin.login'],'prefix'=>'admin' , 'namespace'=>'Ad
     Route::get('change_pass','IndexController@change_pass');
     Route::post('ajax_change_pass','IndexController@ajax_change_pass');
 
+    Route::resource('cate','CateController');
+
 });
 
 // 前台
