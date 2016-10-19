@@ -1,9 +1,7 @@
 @extends('admin/template')
 
 @section('style')
-    <style>
-        body{background: #ebebeb; color: #555; font-size: 12px; }
-    </style>
+    <script src="{{asset('resources/assets/jquery-3.1.1.min.js')}}"></script>
 @endsection
 
 @section('header')
@@ -36,14 +34,14 @@
             <img src="{{url('admin/code')}}" id="code_img" onclick="this.src='{{url('admin/code')}}?'+Math.random()">
         </div>
         <div class="bottom">
-            <button type="submit" class="am-btn bin_btn" >登录</button>
+            <button type="submit" class="bh_btn" >登录</button>
         </div>
     </form>
 </div>
 @endsection
 
 @section('script')
-<script type="application/javascript">
+<script>
 
     $(function(){
         $("#username").focus();
