@@ -20,4 +20,15 @@ class CateController extends Controller
         return view('admin/cate/index',$data);
     }
 
+    /**
+     * 添加分类
+     * @Author wzb 2016-10-18
+     **/
+    public function create() {
+        $data = array(
+            'title' => '添加分类'
+        );
+        return view('admin/cate/add',$data);
+    }
+
 }
