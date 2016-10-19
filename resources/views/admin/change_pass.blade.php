@@ -1,7 +1,6 @@
 @extends('admin/template')
 
 @section('content')
-<div class="bh_content">
 
     <fieldset class="layui-elem-field">
         <legend>{{$title or ''}}</legend>
@@ -39,7 +38,6 @@
         </div>
     </fieldset>
 
-</div>
 @endsection
 
 @section('script')
