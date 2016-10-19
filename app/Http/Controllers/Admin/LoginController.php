@@ -33,6 +33,12 @@ class LoginController extends Controller
         if( empty($user) || Crypt::decrypt($user['pass']) != $input['password']){
             return back_code(-101);
         }
+        $login_data = array(
+            'login_num'=> $user['login_num']+1,
+            'dat'=> time()
+        );
+        User::where('uid',$user['uid'])->update($login_data);
+        unset($user['pass']);
         session(['admin_user'=>$user]);
         return back_code(1,url('admin'));
     }

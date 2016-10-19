@@ -18,7 +18,9 @@
     <link rel="alternate icon" type="image/png" href="{{asset('resources/assets/favicon.png')}}">
     <link rel="stylesheet" href="{{asset('resources/assets/layui/css/layui.css')}}"/>
     <link rel="stylesheet" href="{{asset('resources/assets/admin/css/admin.css')}}"/>
-
+    <script src="{{asset('resources/assets/jquery-3.1.1.min.js')}}"></script>
+    <script src="{{asset('resources/assets/layui/layui.js')}}"></script>
+    <script src="{{asset('resources/assets/public.js')}}"></script>
     @yield('style')
 </head>
 <body>
@@ -36,7 +38,7 @@
     <ul class="layui-nav bh_fr">
         <li class="layui-nav-item">
             <a href="{{url('admin/change_pass')}}">
-                <i class="layui-icon">&#xe60c;</i> 修改密码
+                <i class="layui-icon">&#xe620;</i> 修改密码
             </a>
         </li>
         <li class="layui-nav-item">
@@ -79,12 +81,11 @@
 <!-- sidebar end -->
 @show
 
+
 @section('content')
 @show
 
 
-<script src="{{asset('resources/assets/layui/layui.js')}}"></script>
-<script src="{{asset('resources/assets/public.js')}}"></script>
 @yield('script')
 </body>
 </html>

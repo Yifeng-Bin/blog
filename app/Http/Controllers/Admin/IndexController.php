@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Model\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Input;
 
 class IndexController extends Controller
 {
@@ -14,33 +17,55 @@ class IndexController extends Controller
      * @Author wzb 2016-10-18
      **/
     public function index() {
-        /*后台菜单配置*/
-        $menu = array(
-            array('url'=>'admin/index','class'=>'am-icon-home','name'=>'首页'),
-            array('class'=>'am-icon-comment','name'=>'信息','children'=>array(
-                'admin/thread/index'=>array('class'=>'am-icon-comments','name'=>'信息管理'),
-                'admin/cate/index'=>array('class'=>'am-icon-twitch','name'=>'分类管理'),
-            )
-            ),
-            array('class'=>'am-icon-cogs','name'=>'系统','children'=>array(
-                'admin/siteconfig/index'=>array('class'=>'am-icon-gear','name'=>'网站配置'),
-                'admin/adminuser/index'=>array('class'=>'am-icon-gear','name'=>'管理员管理'),
-                'admin/admingroup/index'=>array('class'=>'am-icon-gear','name'=>'管理员组管理'),
-                'admin/aclsource/index'=>array('class'=>'am-icon-gear','name'=>'资源管理'),
-                'admin/plugins/index'=>array('class'=>'am-icon-plug','name'=>'插件管理'),
-            )
-            ),
-            array('class'=>'am-icon-pie-chart','name'=>'统计','children'=>array(
-                'admin/cnt/index'=>array('class'=>'am-icon-area-chart','name'=>'综合统计'),
-                'admin/cnt/thread'=>array('class'=>'am-icon-bar-chart','name'=>'信息活跃度统计'),
 
-            )
-            ),
-        );
         $data = array(
-            'menu'=>$menu,
             'title'=>'后台首页'
         );
         return view('admin/index',$data);
     }
+
+    /**
+     * 修改密码
+     * @Author wzb 2016-10-18
+     **/
+    public function change_pass() {
+        $data = array(
+            'title'=>'修改密码'
+        );
+        return view('admin/change_pass',$data);
+    }
+    /**
+     * 修改密码(ajax)
+     * @Author wzb 2016-10-18
+     **/
+    public function ajax_change_pass() {
+        $post = Input::all();
+
+        if(empty($post['password'])){
+            return back_code(-102);
+        }
+        if( strlen($post['password']) > 20 || strlen($post['password']) < 5 ){
+            return back_code(-105);
+        }
+
+        if( $post['password'] != $post['password_confirmed']){
+            return back_code(-103);
+        }
+
+        $admin_user = session('admin_user');
+        $uid = (int)$admin_user['uid'];
+        $user = User::find($uid);
+
+        if( $post['old'] != Crypt::decrypt($user['pass'])){
+            return back_code(-104);
+        }
+        $new_user['pass'] = Crypt::encrypt($post['password']);
+        $res = User::where('uid',$uid)->update($new_user);
+        if($res){
+            return back_code(100);
+        }
+        return back_code(-106);
+    }
+
+
 }

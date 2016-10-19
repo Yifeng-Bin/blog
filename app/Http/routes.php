@@ -27,9 +27,11 @@ Route::group(['prefix'=>'admin' , 'namespace'=>'Admin'],function(){
 
 Route::group(['middleware'=>['admin.login'],'prefix'=>'admin' , 'namespace'=>'Admin'],function(){
 
-    Route::any('/','IndexController@index');
-    Route::any('index','IndexController@index');
-    Route::any('quit','LoginController@quit');
+    Route::get('quit','LoginController@quit');
+    Route::get('/','IndexController@index');
+    Route::get('index','IndexController@index');
+    Route::get('change_pass','IndexController@change_pass');
+    Route::post('ajax_change_pass','IndexController@ajax_change_pass');
 
 });
 
