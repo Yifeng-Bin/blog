@@ -1,7 +1,9 @@
 @extends('admin/template')
 
 @section('style')
-    <script src="{{asset('resources/assets/jquery-3.1.1.min.js')}}"></script>
+    <style>
+        .bh_content{ left: 0;padding:0;}
+    </style>
 @endsection
 
 @section('header')

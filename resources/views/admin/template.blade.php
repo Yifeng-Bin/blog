@@ -81,9 +81,10 @@
 <!-- sidebar end -->
 @show
 
-
+<div class="bh_content">
 @section('content')
 @show
+</div>
 
 
 @yield('script')
