@@ -13,7 +13,7 @@ class Cate extends Model
 
 
     public function tree() {
-        $cate = $this->all();
+        $cate = $this->get();
         return $this->getTree($cate,'cid');
     }
 
@@ -21,13 +21,13 @@ class Cate extends Model
      * 数组转换成树形数组
      * @Author wzb 2016-10-18
      **/
-    public function getTree($data,$field_id='id',$field_pid='pid',$pid=0) {
+    public function getTree($data,$field_id='id',$field_pid='pid',$chailer='_chailer',$pid='0') {
         $arr = array();
         foreach ($data as $k => $v) {
-            if($data->$field_pid == $pid){
+            if($v->$field_pid == $pid){
                 foreach ($data as $c => $cv) {
-                    if($data->$field_pid == $v->$field_id){
-                        $data[$k] = $cv;
+                    if($cv->$field_pid == $v->$field_id){
+                        $data[$k][$chailer] = $data[$c];
                     }
                 }
                 $arr[] = $data[$k];
@@ -35,4 +35,5 @@ class Cate extends Model
         }
         return $arr;
     }
+
 }

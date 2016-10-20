@@ -5,7 +5,7 @@
     <fieldset class="layui-elem-field">
         <legend>{{$title or ''}}</legend>
         <div class="layui-field-box">
-            <form class="layui-form layui-form-pane" id="form_box" onsubmit="return form_submit();" >
+            <form class="layui-form" id="form_box" onsubmit="return form_submit();" >
                 {{csrf_field()}}
                 <div class="layui-form-item">
                     <label class="layui-form-label">旧密码</label>
