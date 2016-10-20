@@ -15,7 +15,7 @@
                     <div class="operation">操作</div>
                 </div>
                 <div id="ajax_list">
-                    @foreach($list_cate as $k => $v)
+                    @foreach($list_cate as $v)
                         <div class="bh_list_item">
                             <div class="bin_icon" onclick="bh_toggle('.show_{{$v->cid}}');">
                                 <i class="layui-icon">&#xe61a;</i>
@@ -34,7 +34,7 @@
                         </div>
 
                        @if(!empty($v->_chiler))
-                            @foreach($v->_chiler as $c => $cv)
+                            @foreach($v->_chiler as $cv)
                                 <div class="bh_list_item show_{{$v->cid}}">
                                     <div class="bin_icon"></div>
                                     <div class="cate">
