@@ -33,19 +33,6 @@ function AjaxJson(url,data,backFunc){
     return false;
 }
 
-/* AjaxJson 错误处理  */
-function on_tap(){
-    is_tap = 0;
-    return false;
-}
-
-function off_tap(){
-    if (parseInt(is_tap) == 1) {
-        return false;
-    }
-    is_tap = 1;
-}
-
 /**
  * 实时动态强制更改用户录入(数字)
  * @Author wzb 2016-10-18
@@ -67,3 +54,12 @@ function number(obj,is_minus){
         obj.value = '-' + obj.value;
     }
 }
+
+/**
+ * 显示隐藏
+ * @Author wzb 2016-10-18
+ **/
+function bh_toggle(sho_class){
+    $(sho_class).slideToggle();
+}
+

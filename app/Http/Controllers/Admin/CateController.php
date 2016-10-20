@@ -87,4 +87,37 @@ class CateController extends Controller
         }
         return back_code(-202);
     }
+
+    /**
+     * 更新分类排序(post)
+     * @Author wzb 2016-10-18
+     **/
+    public function change_order(){
+        $input = Input::all();
+        $cate = Category::find($input['cid']);
+        $cate->cate_order = $input['order'];
+        $res = $cate->update();
+        if($res){
+            return back_code(202);
+        }
+        return back_code(-203);
+    }
+
+    /**
+     * 删除分类(post DELETE)
+     * @Author wzb 2016-10-18
+     **/
+    public function destroy($cid) {
+        $cate = Cate::where('pid',$cid)->first();
+        if($cate){
+            return back_code(-205);
+        }
+
+        $res = Cate::where('cid',$cid)->delete();
+        if($res){
+            return back_code(203);
+        }
+        return back_code(-204);
+    }
+
 }

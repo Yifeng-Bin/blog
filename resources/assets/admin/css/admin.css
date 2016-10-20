@@ -43,6 +43,18 @@ header{position: relative;overflow: hidden; padding: 0 20px; background-color: #
 
 /*修改密码*/
 .layui-elem-field{ max-width: 1000px;}
-.layui-field-box{ padding: 30px;}
+.layui-field-box{ padding: 30px;overflow: hidden;}
 
 
+/* 分类 */
+.bh_list_cate{ position: relative; overflow: hidden;width: 100%; font-size: 14px;color: #333; line-height: 38px;border-left:1px solid #e2e2e2;border-right:1px solid #e2e2e2; }
+.bh_list_cate .bh_list_cate_title{ position: relative; overflow: hidden;width: 100%; background:#393D49; color: #fff;   }
+.bh_list_cate .bh_list_item{ position: relative; overflow: hidden;width: 100%; border-bottom:1px solid #e2e2e2; padding: 3px 0;}
+.bh_list_cate .bh_list_item > div{ float: left; width: 13%;text-align: center;  }
+.bh_list_cate .bh_list_item > div.bin_icon{ width:50px; min-height: 1px; }
+.bh_list_cate .bh_list_item > div.bin_icon .layui-icon{ cursor: pointer; display: block; margin-top: 8px;font-size: 1.6em;line-height: 1.2; }
+.bh_list_cate .bh_list_item > div.cate{  text-align: left; width: 40% }
+.bh_list_cate .bh_list_item > div.operation{ float: right;   width: 20%; }
+.bh_list_cate .bh_list_item > div.date{     margin-left: 20px; width: 150px; }
+
+.bh_list_cate .bh_list_item .tab-sign {   display: inline-block;   height: 21px; vertical-align: middle; background-image: url(../images/tab_sign.png);  background-repeat: no-repeat;  width: 55px;  background-position: 0 0;  margin-left: 5px; }
