@@ -1,18 +1,18 @@
-@extends('admin/template')
+<!DOCTYPE html>
+<html>
+<head>
+    @include('admin/style')
+</head>
+<body>
+<!--[if lte IE 9]>
+<div class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请
+    <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+    以获得更好的体验！
+</div>
+<![endif]-->
 
-@section('style')
-    <style>
-        .bh_content{ left: 0;padding:0;}
-    </style>
-@endsection
 
-@section('header')
-@endsection
 
-@section('side')
-@endsection
-
-@section('content')
 <div class="am-g top_div"></div>
 <div class="am-g login">
     <div class="logo">
@@ -40,9 +40,7 @@
         </div>
     </form>
 </div>
-@endsection
 
-@section('script')
 <script>
 
     $(function(){
@@ -112,4 +110,5 @@
         return false;
     };
 </script>
-@endsection
+</body>
+</html>
