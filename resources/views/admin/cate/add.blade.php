@@ -2,7 +2,6 @@
 
 
 @section('content')
-
     <fieldset class="layui-elem-field">
         <legend>{{$title or ''}}</legend>
         <div class="layui-field-box">
@@ -59,6 +58,9 @@
                         btn: ['确定', '取消']
                     },function(){
                         window.location.href = data.data;
+                    },function(){
+                        $('#form_box').find('input').val('');
+                        $('input[name=order]').val('0');
                     });
                 }else{
                     layui.layer.msg(data.msg,{icon:5});

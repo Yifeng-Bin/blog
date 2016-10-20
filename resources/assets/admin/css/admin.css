@@ -17,7 +17,10 @@ header{position: relative;overflow: hidden; padding: 0 20px; background-color: #
 .bh_fl{ float: left;}
 .bh_fr{ float: right;}
 
-.bh_content{ position: fixed; left: 200px; background: #fff; width: 100%; min-width: 1000px; height:100%; padding:25px; }
+.bh_content{ position: fixed;left:0;top:60px;bottom: 0; overflow-x: hidden;z-index: 1;box-sizing: border-box!important;
+    padding:25px;padding-left: 225px;background: #fff; ;width: 100%; min-width: 1000px; height:100%
+
+}
 
 
 /* login*/

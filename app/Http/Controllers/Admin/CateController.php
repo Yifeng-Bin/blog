@@ -94,8 +94,8 @@ class CateController extends Controller
      **/
     public function change_order(){
         $input = Input::all();
-        $cate = Category::find($input['cid']);
-        $cate->cate_order = $input['order'];
+        $cate = Cate::find($input['cid']);
+        $cate->order = $input['order'];
         $res = $cate->update();
         if($res){
             return back_code(202);

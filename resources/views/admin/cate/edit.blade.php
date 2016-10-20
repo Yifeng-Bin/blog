@@ -22,7 +22,7 @@
                             <option value="0">顶级分类</option>
                             @if(isset($list_cate))
                                 @foreach($list_cate as $k => $v)
-                                    <option value="{{$v['cid']}}" @if( $v['cid'] == $info['cid']) selected @endif >{{$v['name']}}</option>
+                                    <option value="{{$v['cid']}}" @if( $v['cid'] == $info['pid']) selected @endif >{{$v['name']}}</option>
                                 @endforeach
                             @endif
                         </select>

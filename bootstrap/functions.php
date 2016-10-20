@@ -6,7 +6,7 @@
  * @return string $res
  * @author wzb 2016-10-18
  */
-if (!function_exists(mobile_addr)) {
+if (!function_exists('mobile_addr')) {
     function mobile_addr($phone) {
         $res = array();
         $paramArr['key'] = '0046a8ea52ce7abd35abeeb480d2d79d';
@@ -28,7 +28,7 @@ if (!function_exists(mobile_addr)) {
  * @param unknown_type $data : 数据
  * @author wzb 2016-10-18
  */
-if(!function_exists(back_code)){
+if(!function_exists('back_code')){
     function back_code($code, $data=array()) {
         $ini_path = __DIR__.'/code.ini';
         $aCode = parse_ini_file($ini_path);
