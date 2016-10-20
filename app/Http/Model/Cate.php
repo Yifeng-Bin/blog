@@ -21,7 +21,7 @@ class Cate extends Model
      * 数组转换成树形数组
      * @Author wzb 2016-10-18
      **/
-    public function getTree($data,$field_id='id',$field_pid='pid',$chailer='_chailer',$pid='0') {
+    public function getTree($data,$field_id='id',$field_pid='pid',$chailer='_chiler',$pid='0') {
         $arr = array();
         foreach ($data as $k => $v) {
             if($v->$field_pid == $pid){

@@ -15,38 +15,47 @@
                     <div class="operation">操作</div>
                 </div>
                 <div id="ajax_list">
-                    <div class="bh_list_item">
-                        <div class="bin_icon" onclick="bh_toggle('.show_1');">
-                            <i class="layui-icon">&#xe61a;</i>
+                    @foreach($list_cate as $k => $v)
+                        <div class="bh_list_item">
+                            <div class="bin_icon" onclick="bh_toggle('.show_{{$v->cid}}');">
+                                <i class="layui-icon">&#xe61a;</i>
+                            </div>
+                            <div class="cate">
+                                <span>{{$v['name']}}</span>
+                            </div>
+                            <div class="layui-input-inline">
+                                <input type="text" onkeyup="number(this)" value="{{$v['order']}}" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="date">{{date('Y-m-d H:i:s',$v['dat'])}}</div>
+                            <div class="operation">
+                                <a href="{{url('admin/cate/1/edit')}}" class="layui-btn layui-btn-normal">修改</a>
+                                <button class="layui-btn layui-btn-danger">删除</button>
+                            </div>
                         </div>
-                        <div class="cate">
-                            <span>视频</span>
-                        </div>
-                        <div class="layui-input-inline">
-                            <input type="password" name="" autocomplete="off" class="layui-input">
-                        </div>
-                        <div class="date">2016-11-10 15:10:10</div>
-                        <div class="operation">
-                            <button class="layui-btn layui-btn-normal">修改</button>
-                            <button class="layui-btn layui-btn-danger">删除</button>
-                        </div>
-                    </div>
 
-                    <div class="bh_list_item show_1">
-                        <div class="bin_icon"></div>
-                        <div class="cate">
-                            <span class="tab-sign"></span>
-                            <span>视频</span>
-                        </div>
-                        <div class="layui-input-inline">
-                            <input type="password" name="" autocomplete="off" class="layui-input">
-                        </div>
-                        <div class="date">2016-11-10 15:10:10</div>
-                        <div class="operation">
-                            <a href="{{url('admin/cate/1/edit')}}" class="layui-btn layui-btn-normal">修改</a>
-                            <button class="layui-btn layui-btn-danger">删除</button>
-                        </div>
-                    </div>
+                       @if(!empty($v->_chiler))
+                            @foreach($v->_chiler as $c => $cv)
+                                <div class="bh_list_item show_{{$v->cid}}">
+                                    <div class="bin_icon"></div>
+                                    <div class="cate">
+                                        <span class="tab-sign"></span>
+                                        <span>{{$cv['name']}}</span>
+                                    </div>
+                                    <div class="layui-input-inline">
+                                        <input type="text" value="{{$cv['order']}}" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="date">{{date('Y-m-d H:i:s',$cv['dat'])}}</div>
+                                    <div class="operation">
+                                        <a href="{{url('admin/cate/'.$cv['cid'].'/edit')}}" class="layui-btn layui-btn-normal">修改</a>
+                                        <button class="layui-btn layui-btn-danger">删除</button>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
+
+                    @endforeach
+
+
 
                 </div>
             </div>
