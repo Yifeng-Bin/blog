@@ -15,7 +15,7 @@
 @section('header')
 <!--头部 开始-->
 <header>
-    <div class="bh_fl logo_text">冰痕博客</div>
+    <a href="{{url('admin')}}" class="bh_fl logo_text">冰痕博客</a>
     <ul class="layui-nav bh_fr">
         <li class="layui-nav-item">
             <a href="{{url('admin/change_pass')}}">
