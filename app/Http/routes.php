@@ -36,6 +36,8 @@ Route::group(['middleware'=>['admin.login'],'prefix'=>'admin' , 'namespace'=>'Ad
     Route::post('change_order','CateController@change_order');
     Route::resource('cate','CateController');
 
+    Route::resource('article','ArticleController');
+
 });
 
 // 前台

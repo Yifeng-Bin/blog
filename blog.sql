@@ -13,6 +13,7 @@ CREATE TABLE `user` (
   `uid` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT '' COMMENT '用户名',
   `pass` varchar(255) DEFAULT '' COMMENT '密码',
+  `nick` varchar(255) NOT NULL DEFAULT '' COMMENT '昵称',
   `login_num` INT (11) DEFAULT '0' COMMENT '登录次数',
   `dat` INT (11) DEFAULT '0' COMMENT '时间',
   PRIMARY KEY (`uid`),

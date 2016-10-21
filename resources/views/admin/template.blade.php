@@ -39,8 +39,8 @@
     <li class="layui-nav-item layui-this">
         <a href="{{url('admin/cate')}}">分类管理</a>
     </li>
-    <li class="layui-nav-item  layui-this">
-        <a href="{{url('admin/aricle')}}">
+    <li class="layui-nav-item">
+        <a href="{{url('admin/article')}}">
             <i class="layui-icon">&#xe60a;</i>
             <cite>博客管理</cite>
         </a>

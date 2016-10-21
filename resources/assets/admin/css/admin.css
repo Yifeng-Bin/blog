@@ -17,10 +17,13 @@ header{position: relative;overflow: hidden; padding: 0 20px; background-color: #
 .bh_fl{ float: left;}
 .bh_fr{ float: right;}
 
-.bh_content{ position: fixed;left:0;top:60px;bottom: 0; overflow-x: hidden;z-index: 1;box-sizing: border-box!important;
-    padding:25px;padding-left: 225px;background: #fff; ;width: 100%; min-width: 1000px; height:100%
+.w_500{width: 500px;}
 
+.bh_content{ position: fixed;left:0;top:60px;bottom: 0; overflow-x: hidden;z-index: 1;box-sizing: border-box!important;
+    padding:25px;padding-left: 225px;background: #fff; ;width: 100%; min-width: 1230px; height:100%
 }
+.layui-elem-field{ max-width: 1000px;}
+.layui-field-box{ padding: 30px;overflow: hidden;    min-height: 350px;}
 
 
 /* login*/
@@ -50,20 +53,29 @@ header{position: relative;overflow: hidden; padding: 0 20px; background-color: #
 .bh_list_text li label { color: #909090; display: inline-block; width: 150px; padding-right: 10px; text-align: right;    margin-right: 15px; vertical-align: middle;font-family: tahoma; }
 .bh_list_text li span {  font-size: 15px;vertical-align: middle;}
 
-/*修改密码*/
-.layui-elem-field{ max-width: 1000px;}
-.layui-field-box{ padding: 30px;overflow: hidden;}
 
 
-/* 分类 */
-.bh_list_cate{ position: relative; overflow: hidden;width: 100%; font-size: 14px;color: #333; line-height: 38px;border-left:1px solid #e2e2e2;border-right:1px solid #e2e2e2; }
-.bh_list_cate .bh_list_cate_title{ position: relative; overflow: hidden;width: 100%; background:#393D49; color: #fff;   }
-.bh_list_cate .bh_list_item{ position: relative; overflow: hidden;width: 100%; border-bottom:1px solid #e2e2e2; padding: 3px 0;}
-.bh_list_cate .bh_list_item > div{ float: left; width: 13%;text-align: center;  }
+/* 列表 */
+.bh_list{ position: relative; overflow: hidden;width: 100%; font-size: 14px;color: #333; line-height: 38px;border-left:1px solid #e2e2e2;border-right:1px solid #e2e2e2; }
+.bh_list .bh_list_title{ position: relative; overflow: hidden;width: 100%; background:#393D49; color: #fff;   }
+.bh_list .bh_list_item{ position: relative; overflow: hidden;width: 100%; border-bottom:1px solid #e2e2e2; padding: 3px 0;}
+.bh_list .bh_list_item > div{ float: left; width: 13%;text-align: center;  }
+.bh_list .bh_list_item > div.operation{ float: right;   width: 20%; }
+.bh_list .bh_list_item > div.date{     margin-left: 20px; width: 150px; }
+
+/*分类*/
 .bh_list_cate .bh_list_item > div.bin_icon{ width:50px; min-height: 1px; }
 .bh_list_cate .bh_list_item > div.bin_icon .layui-icon{ cursor: pointer; display: block; margin-top: 8px;font-size: 1.6em;line-height: 1.2; }
 .bh_list_cate .bh_list_item > div.cate{  text-align: left; width: 40% }
-.bh_list_cate .bh_list_item > div.operation{ float: right;   width: 20%; }
-.bh_list_cate .bh_list_item > div.date{     margin-left: 20px; width: 150px; }
-
 .bh_list_cate .bh_list_item .tab-sign {   display: inline-block;   height: 21px; vertical-align: middle; background-image: url(../images/tab_sign.png);  background-repeat: no-repeat;  width: 55px;  background-position: 0 0;  margin-left: 5px; }
+
+/* 文章 */
+.bh_list_article .bh_list_item > div.title{  text-align: left; width: 35%; max-width: 300px; padding:0 15px; }
+
+
+
+.site-demo-upload,
+.site-demo-upload img{width: 150px; height: 150px; border-radius: 100%;}
+.site-demo-upload{position: relative; background: #e2e2e2;}
+.site-demo-upload .site-demo-upbar{position: absolute; top: 50%; left: 50%; margin: -18px 0 0 -56px;}
+.site-demo-upload .layui-upload-button{background-color: rgba(0,0,0,.6); color: rgba(255,255,255,1);}

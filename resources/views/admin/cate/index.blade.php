@@ -9,8 +9,8 @@
             </a>
             <br/>
             <br/>
-            <div class="bh_list_cate">
-                <div class="bh_list_item bh_list_cate_title">
+            <div class="bh_list bh_list_cate">
+                <div class="bh_list_item bh_list_title">
                     <div class="bin_icon">折叠</div>
                     <div class="cate">分类名称</div>
                     <div class="">排序码</div>
@@ -18,7 +18,7 @@
                     <div class="operation">操作</div>
                 </div>
                 <div id="ajax_list">
-                    @foreach($list_cate as $v)
+                    @foreach($list as $v)
                         <div class="bh_list_item" id="{{$v->cid}}">
                             <div class="bin_icon" is_on="1" onclick="bh_toggle(this,'.show_{{$v->cid}}');">
                                 <i class="layui-icon">&#xe619;</i>

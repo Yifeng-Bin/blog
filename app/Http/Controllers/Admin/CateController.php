@@ -16,9 +16,9 @@ class CateController extends Controller
      * @Author wzb 2016-10-18
      **/
     public function index() {
-        $list_cate = (new Cate)->tree();
+        $list = (new Cate)->tree();
         $data = array(
-            'list_cate' => $list_cate,
+            'list' => $list,
             'title' => '分类管理'
         );
         return view('admin/cate/index',$data);
