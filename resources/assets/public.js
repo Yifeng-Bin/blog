@@ -59,7 +59,19 @@ function number(obj,is_minus){
  * 显示隐藏
  * @Author wzb 2016-10-18
  **/
-function bh_toggle(sho_class){
-    $(sho_class).slideToggle();
+function bh_toggle(obj,sho_class){
+    var is_on = $(obj).attr("is_on");
+    console.log(is_on);
+    if(is_on*1 == 1){
+        $(sho_class).slideUp();
+        $(obj).find('.layui-icon').html('&#xe61a;');
+        $(obj).attr("is_on",'0');
+    }else{
+        $(sho_class).slideDown();
+        $(obj).find('.layui-icon').html('&#xe619;');
+        $(obj).attr("is_on",'1');
+    }
+
+
 }
 

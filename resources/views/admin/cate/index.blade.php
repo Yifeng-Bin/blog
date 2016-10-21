@@ -20,8 +20,8 @@
                 <div id="ajax_list">
                     @foreach($list_cate as $v)
                         <div class="bh_list_item" id="{{$v->cid}}">
-                            <div class="bin_icon" onclick="bh_toggle('.show_{{$v->cid}}');">
-                                <i class="layui-icon">&#xe61a;</i>
+                            <div class="bin_icon" is_on="1" onclick="bh_toggle(this,'.show_{{$v->cid}}');">
+                                <i class="layui-icon">&#xe619;</i>
                             </div>
                             <div class="cate">
                                 <span>{{$v->name}}</span>
