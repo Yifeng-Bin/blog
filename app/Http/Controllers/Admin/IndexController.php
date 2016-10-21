@@ -19,7 +19,7 @@ class IndexController extends Controller
     public function index() {
 
         $data = array(
-            'title'=>'后台首页'
+            'title'=>'系统基本信息'
         );
         return view('admin/index',$data);
     }
