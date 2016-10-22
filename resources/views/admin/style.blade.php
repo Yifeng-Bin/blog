@@ -15,6 +15,7 @@
 <link rel="alternate icon" type="image/png" href="{{asset('resources/assets/favicon.png')}}">
 <link rel="stylesheet" href="{{asset('resources/assets/layui/css/layui.css')}}"/>
 <link rel="stylesheet" href="{{asset('resources/assets/admin/css/admin.css')}}"/>
-<script src="{{asset('resources/assets/jquery-3.1.1.min.js')}}"></script>
+<script src="{{asset('resources/assets/jquery.js')}}"></script>
+{{--<script src="{{asset('resources/assets/jquery-3.1.1.min.js')}}"></script>--}}
 <script src="{{asset('resources/assets/layui/layui.js')}}"></script>
 <script src="{{asset('resources/assets/public.js')}}"></script>
