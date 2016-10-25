@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 
 class ArticleController extends Controller
 {
@@ -46,15 +47,16 @@ class ArticleController extends Controller
     public function store() {
 
         $post = Input::except('_token');
-        if(empty($post['name'])){
-            return back_code(-200);
+        if(empty($post['title'])){
+            return back_code(-207);
         }
+        $post['view'] = 0;
         $post['dat'] = time();
-        $res = Cate::create($post);
+        $res = Article::create($post);
         if($res){
             return back_code(204,url('admin/cate'));
         }
-        return back_code(-201);
+        return back_code(-208);
     }
 
     /**
@@ -62,8 +64,8 @@ class ArticleController extends Controller
      * @Author wzb 2016-10-18
      **/
     public function edit($cid) {
-        $list_cate = Cate::where('pid',0)->get();
-        $info = Cate::where('cid',$cid)->first();
+        $list_cate = (new Cate)->tree();
+        $info = Article::where('aid',$cid)->first();
         $data = array(
             'list_cate' => $list_cate,
             'info' => $info,
@@ -76,18 +78,18 @@ class ArticleController extends Controller
      * 修改文章(post)
      * @Author wzb 2016-10-18
      **/
-    public function update($cid) {
+    public function update($aid) {
 
         $post = Input::except('_token','_method');
-        if(empty($post['name'])){
-            return back_code(-200);
+        if(empty($post['title'])){
+            return back_code(-207);
         }
         $post['dat'] = time();
-        $res = Cate::where('cid',$cid)->update($post);
+        $res = Article::where('aid',$aid)->update($post);
         if($res){
-            return back_code(205,url('admin/cate'));
+            return back_code(205,url('admin/article'));
         }
-        return back_code(-202);
+        return back_code(-209);
     }
 
     /**

@@ -13,6 +13,7 @@ header{position: relative;overflow: hidden; padding: 0 20px; background-color: #
 .layui-nav-item .layui-icon {position: relative;    top: 2px; font-size: 20px;}
 .layui-nav-item a cite{ padding: 0 5px;}
 
+.layui-form-select ul{ z-index: 1010;}
 /*public*/
 .bh_fl{ float: left;}
 .bh_fr{ float: right;}
@@ -59,7 +60,7 @@ header{position: relative;overflow: hidden; padding: 0 20px; background-color: #
 .bh_list{ position: relative; overflow: hidden;width: 100%; font-size: 14px;color: #333; line-height: 38px;border-left:1px solid #e2e2e2;border-right:1px solid #e2e2e2; }
 .bh_list .bh_list_title{ position: relative; overflow: hidden;width: 100%; background:#393D49; color: #fff;   }
 .bh_list .bh_list_item{ position: relative; overflow: hidden;width: 100%; border-bottom:1px solid #e2e2e2; padding: 3px 0;}
-.bh_list .bh_list_item > div{ float: left; width: 13%;text-align: center;  }
+.bh_list .bh_list_item > div{ float: left; width: 13%;text-align: center; min-height: 1px; }
 .bh_list .bh_list_item > div.operation{ float: right;   width: 20%; }
 .bh_list .bh_list_item > div.date{     margin-left: 20px; width: 150px; }
 

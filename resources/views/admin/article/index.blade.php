@@ -12,7 +12,6 @@
             <div class="bh_list bh_list_article">
                 <div class="bh_list_item bh_list_title">
                     <div class="title" style="text-align: center;">文章标题</div>
-                    <div class="">作者</div>
                     <div class="">查看次数</div>
                     <div class="date">更新时间</div>
                     <div class="operation">操作</div>
@@ -21,7 +20,6 @@
                     @foreach($list as $v)
                         <div class="bh_list_item" id="{{$v->aid}}">
                             <div class="title layui-elip"> {{$v->title}}</div>
-                            <div class=""> {{$v->author}}</div>
                             <div class=""> {{$v->view}}</div>
                             <div class="date">{{date('Y-m-d H:i:s',$v->dat)}}</div>
                             <div class="operation">
