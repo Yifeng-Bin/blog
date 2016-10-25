@@ -10,22 +10,21 @@
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="put" >
                 <div class="layui-form-item">
-                    <label class="layui-form-label">分类名称</label>
+                    <label class="layui-form-label">菜单名称</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="name" value="{{$info['name']}}" required lay-verify="required" placeholder="请输入分类名称" autocomplete="off" class="layui-input">
+                        <input type="text" name="name" value="{{$info['name']}}" required lay-verify="required" placeholder="请输入菜单名称" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">父级分类</label>
+                    <label class="layui-form-label">菜单别名</label>
                     <div class="layui-input-inline">
-                        <select name="pid" lay-verify="required">
-                            <option value="0">顶级分类</option>
-                            @if(isset($list_cate))
-                                @foreach($list_cate as $k => $v)
-                                    <option value="{{$v['cid']}}" @if( $v['cid'] == $info['pid']) selected @endif >{{$v['name']}}</option>
-                                @endforeach
-                            @endif
-                        </select>
+                        <input type="text" name="alias" value="{{$info['alias']}}" placeholder="请输入菜单别名" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">菜单地址</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="url" value="{{$info['url']}}" required lay-verify="required" placeholder="请输入菜单地址" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -52,11 +51,11 @@
         //提交post函数
         function form_submit(){
 
-            var url = "{{url('admin/cate')}}"+"/{{$info['cid']}}";
+            var url = "{{url('admin/navs')}}"+"/{{$info['id']}}";
             var data = $('#form_box').serialize();
             AjaxJson(url,data,function(data){
                 if(data.staus*1 > 1){
-                    layui.layer.confirm(data.msg+"是否返回分类管理页面？",{
+                    layui.layer.confirm(data.msg+"是否返回菜单管理页面？",{
                         btn: ['确定', '取消']
                     },function(){
                         window.location.href = data.data;

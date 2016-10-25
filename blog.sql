@@ -73,6 +73,7 @@ CREATE TABLE `config` (
   `tips` varchar(255) DEFAULT '' COMMENT '描述',
   `type` varchar(50) DEFAULT '' COMMENT '字段类型',
   `value` varchar(255) DEFAULT '' COMMENT '类型值',
+  `dat` int(11) DEFAULT '0' comment '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -85,9 +86,9 @@ DROP TABLE IF EXISTS `links`;
 CREATE TABLE `links` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '' COMMENT '名称',
-  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '' COMMENT '标题',
   `url` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '' COMMENT '链接',
   `order` int(11) NOT NULL DEFAULT '0' COMMENT '排序',
+  `dat` int(11) DEFAULT '0' comment '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -102,5 +103,6 @@ CREATE TABLE `navs` (
   `alias` varchar(50) DEFAULT '' COMMENT '别名',
   `url` varchar(255) DEFAULT '' COMMENT 'url',
   `order` int(11) DEFAULT '0' COMMENT '排序',
+  `dat` int(11) DEFAULT '0' comment '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

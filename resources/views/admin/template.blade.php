@@ -49,13 +49,13 @@
         <a>系统管理</a>
     </li>
     <li class="layui-nav-item">
-        <a href="">友情管理</a>
+        <a href="{{url('admin/links')}}">友情管理</a>
     </li>
     <li class="layui-nav-item">
-        <a href="">导航管理</a>
+        <a href="{{url('admin/navs')}}">导航管理</a>
     </li>
     <li class="layui-nav-item">
-        <a href="">网站配置</a>
+        <a href="{{url('admin/config')}}">网站配置</a>
     </li>
 
 </ul>

@@ -38,6 +38,15 @@ Route::group(['middleware'=>['admin.login'],'prefix'=>'admin' , 'namespace'=>'Ad
 
     Route::resource('article','ArticleController');
 
+    Route::post('up_links_order','LinksController@up_links_order');
+    Route::resource('links','LinksController');
+
+    Route::post('up_navs_order','NavsController@up_navs_order');
+    Route::resource('navs','NavsController');
+
+    Route::post('up_config_order','ConfigController@up_config_order');
+    Route::resource('config','ConfigController');
+
 });
 
 // 前台
