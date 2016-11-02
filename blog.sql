@@ -20,7 +20,7 @@ CREATE TABLE `user` (
   KEY `name`(`name`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='管理员';
 
-INSERT INTO `user` VALUES ('1','admin','eyJpdiI6IitWZERBNDZ4RjNOY1VKTXNURlNTamc9PSIsInZhbHVlIjoiUjd3cUhqekoxamJGTU5QZUtiM052QT09IiwibWFjIjoiYjQ5NzQ3MmUwMzBmMDVhYmMxMTI0NGVmZjc1NDc1ODg5Y2NjMjgzZmI5ZTI3MzMwZGZhM2RjYjI5MjE3ZjZlMCJ9','0','0');
+INSERT INTO `user` VALUES ('1','admin','eyJpdiI6IitWZERBNDZ4RjNOY1VKTXNURlNTamc9PSIsInZhbHVlIjoiUjd3cUhqekoxamJGTU5QZUtiM052QT09IiwibWFjIjoiYjQ5NzQ3MmUwMzBmMDVhYmMxMTI0NGVmZjc1NDc1ODg5Y2NjMjgzZmI5ZTI3MzMwZGZhM2RjYjI5MjE3ZjZlMCJ9','admin','0','0');
 
 -- ----------------------------
 -- create table cate
